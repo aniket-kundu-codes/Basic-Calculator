@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/about_background"
+    android:layout_height="match_parent"
+    tools:context=".About">
+<com.google.android.material.appbar.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:fitsSystemWindows="true"
+    android:id="@+id/appbar"
+
+    >
+    <com.google.android.material.appbar.CollapsingToolbarLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        app:contentScrim="#1C8CE1"
+        android:background="@drawable/about_background"
+        app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+        app:title="ⓘ About"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="𝕭𝖆𝖘𝖎𝖈 𝕮𝖆𝖑𝖈𝖚𝖑𝖆𝖙𝖔𝖗"
+            android:textColor="@color/black"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="15dp"
+            android:textSize="28sp"
+            app:layout_collapseMode="parallax"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-𝐷𝑒𝑣𝑒𝑙𝑜𝑝𝑒𝑑 𝑏𝑦: 𝐴𝑛𝑖𝑘𝑒𝑡 𝐾𝑢𝑛𝑑𝑢,"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:layout_gravity="end"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="50dp"
+            app:layout_collapseMode="parallax"
+            ></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 𝐴 𝑓𝑖𝑟𝑠𝑡 𝑦𝑒𝑎𝑟 𝑠𝑡𝑢𝑑𝑒𝑛𝑡,"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:layout_gravity="end"
+            android:layout_marginRight="80dp"
+            android:layout_marginTop="80dp"
+            app:layout_collapseMode="parallax"
+            ></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="𝐾𝐼𝐼𝑇 𝑈𝑁𝐼𝑉𝐸𝑅𝑆𝐼𝑇𝑌"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:layout_gravity="end"
+            android:layout_marginRight="69dp"
+            android:layout_marginTop="110dp"
+            app:layout_collapseMode="parallax"
+            ></TextView>
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_collapseMode="pin"
+            android:id="@id/toolbar"
+            ></androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+</com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_about"
+             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            ><androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_constraintLeft_toLeftOf="parent"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="25dp"
+    app:layout_constraintTop_toTopOf="parent"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="𝙳𝙰𝚁𝙺 𝙼𝙾𝙳𝙴:"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutHead"
+        android:textStyle="bold"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Click on the App icon present in drawer to Turn on/off Dark Mode."
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="𝚂𝙲𝙸𝙴𝙽𝚃𝙸𝙵𝙸𝙲 𝙲𝙰𝙻𝙲𝚄𝙻𝙰𝚃𝙾𝚁"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutHead"
+        android:textStyle="bold"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="A Calculator with almost every function of your need,
+specifically designed for high school students. Just type an expression and get your answer ready.It also features Live Answer which tracks your input and instantly give the answer."
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Guide:"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="➤ All Trigonometric functions are available: Sin(),Cos(),Tan(),Cosec() /Csc(),Sec(),Cot()"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="➤ All Inverse Trigonometric functions are available: Sin-1(),Cos-1(),Tan-1(),Cosec-1() /Csc-1(),Sec-1(),Cot-1()"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="➤ All Hyperbolic functions are available: Sinh(),Cosh(),Tanh(),Cosech()/Csch(),Sech(),Coth()"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="➤All Inverse Hyperbolic functions are available:
+Sinh-1(),Cosh-1(),Tanh-1(),Csch-1() /Cosech-1(),Sech-1(),Coth-1()"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="➤ Natural Logarithm function,i.e., Logarithmic function of base e, ln() and Logarithmic function of base 10 log() are also available."
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="NOTE: For all these above functions,case doesn't factor.For eg, Sin() is same as sin(). BUT functions should have brackets."
+        android:textColor="@color/Note"
+        android:textSize="@dimen/aboutnormal"
+
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="➤ Exponential function 'e' is available with approx. value 2.7182818284590455"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="➤ Use 'P' for Permutation &amp; 'C' for Combination"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="➤ 'E' can be used in place of ×10^(). For eg. aEb = a×10^(b)"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="➤ All basic operations are available:
++,-,×,*,÷,/,^"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="NOTE: * is same as × and / is same as ÷"
+        android:textColor="@color/Note"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="➤ Click 'USE ANSWER' to use the currently displayed answer or the last answer."
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="➤ Click 'N/D' to get the displayed answer in Fraction."
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="➤ Click 'CLEAR' to clear the displayed answer and typed expression."
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="NOTE: It saves the last displayed answer and delete it if CLEAR is clicked twice"
+        android:textColor="@color/Note"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="➤ Click 'SUBMIT' to get the final answer."
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="Tip: Use Bracket to avoid errors &amp; write in a correct format."
+        android:textColor="@color/Note"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="𝙸𝙽𝚅𝙴𝚂𝚃𝙼𝙴𝙽𝚃 𝙿𝙻𝙰𝙽𝙽𝙸𝙽𝙶"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutHead"
+        android:textStyle="bold"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="This calculator will help you alot in your investment journey."
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="SI"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="➣ For basic calculation,where you take out your return every year,ie, the money is not compounded annually."
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="CI"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="➣Calculate the compounded money you will get on one time investment,the average rate of return you get,the time required to reach your goal,and the principal value you have to invest to reach your goal."
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Continuous SIP"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="➣Systematic Investment Plan,calculations are only for monthly investment. Calculate the amount you have to invest on a monthly basis to achieve your goal amount,the time for which you have to invest to achieve your goal,and the amount you will get after certain time on investing certain amount on a monthly basis."
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="SIP for Limited Time"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="➣ Invest certain amount of money on a monthly basis for a limited period of time and then leave it for compounding. Calculate the amount you have to monthly invest to get you goal amount,and the final amount you will get on investing certain amount on a monthly basis."
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="NOTE: 'Total Time' indicates the time between Today and the day you receive the final amount, and 'SIP Continued For' indicates the time between today and the day you invest for the last time."
+        android:textColor="@color/Note"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="𝚄𝙽𝙸𝚃 𝙲𝙾𝙽𝚅𝙴𝚁𝚃𝙴𝚁"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutHead"
+        android:textStyle="bold"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Convert units of almost every type of measurement such as Length,Area,Volume,Pressure,Density,Speed,Temperature,Weight,Time,Base."
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textStyle="italic"
+        android:text=">Provides conversion to all possible units from the selected unit."
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textStyle="italic"
+        android:text=">Provides Live conversion by tracking your input."
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="𝙱𝙰𝚂𝙴 𝙲𝙰𝙻𝙲𝚄𝙻𝙰𝚃𝙾𝚁"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutHead"
+        android:textStyle="bold"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="From Base 2 to Base 36,calculate everything at one place with great UI."
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textStyle="italic"
+        android:text="● Supports mathematical operations:+,-,×,/"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    v
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textStyle="italic"
+        android:text="● For Converting the Expression to some other base,change the current base to some other base."
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textStyle="italic"
+        android:text="● It saves data/history in app's database,and to clear the data from the database Click on CLEAR button"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Tip:Use Landscape mode for better experience."
+        android:textColor="@color/Note"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="𝙳𝙰𝚃𝙴 𝙰𝙽𝙳 𝙰𝙶𝙴 𝙲𝙰𝙻𝙲𝚄𝙻𝙰𝚃𝙾𝚁"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutHead"
+        android:textStyle="bold"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="This calculator helps to calculate:"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="● Your Exact age"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="● Date and Day ,After or Before Initial Date"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textStyle="italic"
+        android:text="● Days between Initial and Final Date"
+        android:textColor="@color/aboutnormal"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Tip: Leave INITIAL DATE empty to fill it up with Current Date."
+        android:textColor="@color/Note"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="NOTE: Enter key '↩' can be used in place of '/' "
+        android:textColor="@color/Note"
+        android:textSize="@dimen/aboutnormal"
+        ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        ></TextView>
+
+</LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    <ImageView
+        android:id="@+id/insta"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginRight="26dp"
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        android:src="@drawable/insta_icon___"
+        app:layout_anchor="@id/appbar"
+        app:layout_anchorGravity="bottom|end"></ImageView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

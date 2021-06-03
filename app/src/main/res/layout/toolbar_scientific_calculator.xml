@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/toolbar_scientific_calculator"
+    >
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:src="@drawable/toggle"
+        android:layout_marginLeft="0dp"
+        android:background="@color/toolbar_scientific_calculator"
+        android:id="@+id/toggle"
+        ></ImageButton>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/scientic_calcultor"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:layout_marginLeft="30dp">
+
+    </TextView>
+   <TextView
+     android:id="@+id/ibutton"
+       android:layout_width="22dp"
+       android:layout_height="wrap_content"
+       android:text="𝒊"
+       android:textColor="@color/blackinvest"
+       android:textSize="18sp"
+       android:gravity="center"
+       android:layout_gravity="end"
+       android:layout_marginRight="10dp"
+       android:background="@drawable/circle"></TextView>
+</androidx.appcompat.widget.Toolbar>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightskydate"
+    tools:context=".Date">
+
+    <TextView
+        android:id="@+id/FirstDateSuggestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Date"
+        app:layout_constraintStart_toStartOf="@id/FirstDate"
+        app:layout_constraintBottom_toTopOf="@id/FirstDate"/>
+
+    <RadioGroup
+        android:id="@+id/day_radiogroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       app:layout_constraintStart_toStartOf="@id/Day"
+        app:layout_constraintBottom_toTopOf="@id/Day"
+        >
+
+        <RadioButton
+            android:id="@+id/radioAfter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/after"
+            android:textSize="13sp" />
+
+        <RadioButton
+            android:id="@+id/radioBefore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/before"
+            android:textSize="13sp" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/fdate_radiogroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="93dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="79dp"
+        app:layout_constraintBottom_toTopOf="@+id/SecondDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/FirstDate"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioagecal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/age_calculator"
+            android:textSize="13sp" />
+
+        <RadioButton
+            android:id="@+id/radiodatecal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/date_calculator"
+            android:textSize="13sp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/submitbasecal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/purple_700"
+        android:text="Result"
+        app:layout_constraintEnd_toEndOf="@+id/Ans_view"
+        app:layout_constraintStart_toStartOf="@+id/Ans_view"
+        app:layout_constraintTop_toBottomOf="@+id/Ans_view" />
+
+    <TextView
+        android:id="@+id/Ans_view"
+        android:layout_width="0dp"
+        android:layout_height="20sp"
+       android:layout_marginTop="40dp"
+        android:textIsSelectable="true"
+        app:layout_constraintEnd_toEndOf="@id/SecondDate"
+        app:layout_constraintStart_toStartOf="@id/Day"
+        app:layout_constraintTop_toBottomOf="@+id/SecondDate" />
+
+    <EditText
+        android:id="@+id/SecondDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="39dp"
+        android:digits="1234567890/"
+        android:ems="10"
+        android:hint="dd/mm/yyyy"
+        android:longClickable="false"
+        android:inputType="date"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/Ans_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Day"
+        app:layout_constraintTop_toBottomOf="@+id/fdate_radiogroup" />
+
+    <EditText
+        android:id="@+id/Day"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="44dp"
+        android:ems="10"
+        android:digits="0123456789"
+        android:hint="Day"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBaseline_toBaselineOf="@+id/SecondDate"
+        app:layout_constraintEnd_toStartOf="@+id/SecondDate"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/FirstDate"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="125dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="1dp"
+        android:digits="0123456789/"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:hint="@string/dd_mm_yyyy"
+        android:longClickable="false"
+        android:inputType="date"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/fdate_radiogroup"
+        app:layout_constraintEnd_toStartOf="@+id/fdate_radiogroup"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_date"></include>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

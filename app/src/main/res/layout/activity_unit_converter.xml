@@ -1,0 +1,2746 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UnitConverter">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_unitconverter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></include>
+
+    <ScrollView
+        android:id="@+id/scrollViewunit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:layout_marginTop="60dp">
+
+        <LinearLayout
+            android:id="@+id/linearlayoutunit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="15dp"
+            android:orientation="vertical">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:background="@color/heading">
+
+                <TextView
+                    android:id="@+id/lengthu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Length "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/type_dimension"
+                    android:textStyle="italic" />
+
+                <Spinner
+                    android:id="@+id/spinnerl"
+                    android:layout_width="181dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="135dp"
+                    android:textAlignment="textEnd" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp">
+
+                <EditText
+                    android:id="@+id/Numberl"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+
+                <Button
+                    android:id="@+id/showl"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="55dp"
+                    android:backgroundTint="@color/Green"/>
+
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/lll"
+                >
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lightYearslength"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LightYears:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/lightYearslengthans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:id="@+id/lightYearslengthsymbol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ly"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/Mileslength"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Miles:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/mileslengthans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:id="@+id/Mileslengthsymbol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="miles"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/Kilolength"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kilometre:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/Kilolengthans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:id="@+id/Kilolengthsymbol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Km"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/metrel"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="metre:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/metrelans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:id="@+id/metrelsym"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="m"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/yardl"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yard:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/yardlans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:id="@+id/yardlsym"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="yards"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/footl"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Foot:"
+                    android:layout_marginRight="@dimen/marginfirst"
+                    android:textSize="@dimen/allfirst"
+                    android:textColor="@color/firsttext"
+                    />
+
+                    <TextView
+                        android:id="@+id/footlans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:id="@+id/footlsym"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="foot"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/decil"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="decimetre:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/decilans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:id="@+id/decilsym"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dm"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/inchl"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Inches:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/inchlans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:id="@+id/inchlsym"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="inch"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/centil"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="centimetre:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/centilans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:id="@+id/centilsym"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="cm"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/milil"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="milimetre:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/mililans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:id="@+id/mililsym"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="mm"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/microl"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="micrometre:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/microlans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:id="@+id/microlsym"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="μm"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/nanol"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="nanometre:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/nanolans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:id="@+id/nanolsym"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="nm"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/angstroml"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Angstrom:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/angstromlans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:id="@+id/angstromlsym"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="	Å"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/picol"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="picometre:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/picolans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:id="@+id/picolsym"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="pm"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/femtol"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="femtometre:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/femtolans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:id="@+id/femtolsym"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="fm"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+            </LinearLayout>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:background="@color/heading">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Area "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/type_dimension"
+                    android:textStyle="italic" />
+
+                <Spinner
+                    android:id="@+id/spinnera"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+
+                    android:textAlignment="textEnd"
+                    />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp">
+
+                <EditText
+                    android:id="@+id/Numbera"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+
+                <Button
+                    android:id="@+id/showa"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="55dp"
+                    android:backgroundTint="@color/Green"/>
+
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/lla"
+                >
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sq. Mile:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/mileAans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="sq.miles"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sq. Kilometre:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/kiloAans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="sq.Km"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hectare:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/hectareAans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="hectare"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Acre:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/acreAans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="acres"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bigha:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/bighaAans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="bigha"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sq. metre:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/metreAans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="sq.m"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sq. Yard:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/yardAans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="sq.yards"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sq. Foot:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/footAans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="sq.foot"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sq. Inches:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/inchesAans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="sq.inch"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sq. Centimetre:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/centiAans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="sq.cm"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sq. Milimetre:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/miliAans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="sq.mm"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+            </LinearLayout>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:background="@color/heading">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Volume "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/type_dimension"
+                    android:textStyle="italic" />
+
+                <Spinner
+                    android:id="@+id/spinnerv"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="130dp"
+                    android:textAlignment="textEnd"
+                    />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp">
+
+                <EditText
+                    android:id="@+id/Numberv"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+
+                <Button
+                    android:id="@+id/showv"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="55dp"
+                    android:backgroundTint="@color/Green"/>
+
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/llv"
+                >
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cu. Metre:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/metrevans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="cu.m"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cu. Yard:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/yardvans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="cu.yards"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cu. Foot:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/footvans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="cu.foot"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gallon:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/gallonvans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="gallons"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Litre(or dm^3):"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/litreVans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="L"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quart:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/quartvans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="quarts"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cup:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/cupvans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="cups"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cu. Inches:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/inchesvans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="cu.inch"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tablespoon:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/tablespoonvans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="tablespoons"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Teaspoon:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/teaspoonvans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="teaspoons"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mililitre(or cc):"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/mililitrevans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="mL"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cu. Milimetre:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/milivans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="cu.mm"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+            </LinearLayout>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:background="@color/heading">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pressure "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/type_dimension"
+                    android:textStyle="italic" />
+
+                <Spinner
+                    android:id="@+id/spinnerp"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="120dp"
+                    android:textAlignment="textEnd"
+                    />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp">
+
+                <EditText
+                    android:id="@+id/Numberp"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+
+                <Button
+                    android:id="@+id/showp"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="55dp"
+                    android:backgroundTint="@color/Green"/>
+
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/llp"
+                >
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Std. Atmos.:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/atmpans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="atm"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bar:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/barpans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="bars"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kgf/cm^2:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/kgpans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="kgf/cm^2"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Decibar:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/decipans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dbar"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Torr(or mmHg):"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/torrpans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Torr"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pascal(Pa or N/m^2):"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/papans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pa"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MiliTorr:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/milipans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="mTorr"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dyne/cm^2:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/dynepans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dyn/cm^2"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+            </LinearLayout>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:background="@color/heading">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Density "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/type_dimension"
+                    android:textStyle="italic" />
+
+                <Spinner
+                    android:id="@+id/spinnerd"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="132dp"
+                    android:textAlignment="textEnd"
+                    />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp">
+
+                <EditText
+                    android:id="@+id/Numberd"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+
+                <Button
+                    android:id="@+id/showd"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="55dp"
+                    android:backgroundTint="@color/Green"/>
+
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/lld"
+                >
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kg/mL or kg/cm^3:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/kgmldans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        /></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kg/L or Kg/dm^3:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/kgldans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        /></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kg/m^3:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/kgmdans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        /></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="g/mL or g/cm^3:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/gmldans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="g/L or g/dm^3:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/gldans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                   </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="g/m^3:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/gmdans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        /></TableRow>
+            </LinearLayout>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:background="@color/heading">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Speed "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/type_dimension"
+                    android:textStyle="italic" />
+
+                <Spinner
+                    android:id="@+id/spinners"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="137dp"
+                    android:textAlignment="textEnd"
+                    />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp">
+
+                <EditText
+                    android:id="@+id/Numbers"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+
+                <Button
+                    android:id="@+id/shows"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="55dp"
+                    android:backgroundTint="@color/Green"/>
+
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/lls"
+                >
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Metre/second:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/mpssans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="m/s"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Knot:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/ksans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="knot"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Miles/second:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/mipssans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="mps"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Foot/hour:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/fphsans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ft/h"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kilometre/hour:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/kphsans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="km/h"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+            </LinearLayout>
+ <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:background="@color/heading">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temperature "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/type_dimension"
+                    android:textStyle="italic" />
+
+                <Spinner
+                    android:id="@+id/spinnertemp"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="93dp"
+                    android:textAlignment="textEnd"
+                    />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp">
+
+                <EditText
+                    android:id="@+id/Numbertemp"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="numberSigned|numberDecimal" />
+
+                <Button
+                    android:id="@+id/showtemp"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="55dp"
+                    android:backgroundTint="@color/Green"/>
+
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/lltemp"
+                >
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Celsius:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/ctempans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="℃"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kelvin:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/ktempans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="K"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fahrenheit:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/ftempans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="℉"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+            </LinearLayout>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:background="@color/heading">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Weight "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/type_dimension"
+                    android:textStyle="italic" />
+
+                <Spinner
+                    android:id="@+id/spinnerw"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="133dp"
+                    android:textAlignment="textEnd"
+                    />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp">
+
+                <EditText
+                    android:id="@+id/Numberw"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+
+                <Button
+                    android:id="@+id/showw"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="55dp"
+                    android:backgroundTint="@color/Green"/>
+
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/llw"
+                >
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tonne:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/twans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="t"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kilogram:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/kwans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="kg"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pound:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/pwans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="lb"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ounce:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/owans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="oz"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gram:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/gwans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="g"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="miligram:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/miliwans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="mg"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="microgram:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/microwans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="µg"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+            </LinearLayout>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:background="@color/heading">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/type_dimension"
+                    android:textStyle="italic" />
+
+                <Spinner
+                    android:id="@+id/spinnertime"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="145dp"
+                    android:textAlignment="textEnd"
+                    />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp">
+
+                <EditText
+                    android:id="@+id/Numbertime"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+
+                <Button
+                    android:id="@+id/showtime"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="55dp"
+                    android:backgroundTint="@color/Green"/>
+
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/lltime"
+                >
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Day:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/dtimeans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="days"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hour:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/htimeans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="hrs"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Minute:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/mtimeans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="mins"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Second:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/stimeans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="s"
+                        android:textSize="@dimen/allthird"
+                        android:textColor="@color/Thirdtext"/></TableRow>
+            </LinearLayout>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:background="@color/heading">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Base "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/type_dimension"
+                    android:textStyle="italic" />
+
+                <Spinner
+                    android:id="@+id/spinnerb"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="145dp"
+                    android:textAlignment="textEnd"
+                    />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp">
+
+                <EditText
+                    android:id="@+id/Numberb"
+                    android:labelFor="@id/Numberb"
+                    android:gravity="start|top"
+                   android:inputType="textMultiLine"
+                    android:digits="1234567890abcdefABCDEF.-"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                     />
+
+                <Button
+                    android:id="@+id/showb"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="55dp"
+                    android:backgroundTint="@color/Green"/>
+
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/llb"
+                >
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hexadecimal:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/hbaseans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        /></TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Decimal:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/dbaseans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        /></TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Octal:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/obaseans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        /></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/diffbetweentwounit">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bimary:"
+                        android:layout_marginRight="@dimen/marginfirst"
+                        android:textSize="@dimen/allfirst"
+                        android:textColor="@color/firsttext"
+                        />
+
+                    <TextView
+                        android:id="@+id/bbaseans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/allsecond"
+                        android:layout_marginRight="@dimen/marginsecond"
+                        android:textColor="@color/secondtext"
+                        /></TableRow>
+            </LinearLayout>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="400dp"></TextView>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

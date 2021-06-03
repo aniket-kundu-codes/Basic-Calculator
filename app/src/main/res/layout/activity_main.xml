@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Ur"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity"
+    android:backgroundTint="@color/whitesci">
+
+        <include layout="@layout/toolbar_scientific_calculator"
+            android:id="@+id/toolbar"></include>
+
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="25dp"
+        android:textColor="@color/Uniquesci"
+        android:textSize="24sp"
+        android:textIsSelectable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/liveans" />
+
+    <Button
+        android:id="@+id/submitbasecal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="@color/submitsci"
+        android:text="@string/submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/clearbasecal"
+        app:layout_constraintTop_toBottomOf="@id/tv" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:contentDescription="@string/con"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:srcCompat="@drawable/pic" />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/num"
+        android:labelFor="@id/num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
+        android:text=""
+        android:hint="@string/enter_an_expression"
+        android:digits="1234567890aceghilnostACEGHILNOSTP+-*×/÷^()."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/liveans"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/livegray"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="@id/num"
+        app:layout_constraintTop_toBottomOf="@id/num" />
+
+    <Button
+        android:id="@+id/Ures"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF1CE105"
+        android:text="@string/use_answer"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/clearbasecal"
+        app:layout_constraintEnd_toStartOf="@+id/clearbasecal"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/clearbasecal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/Red"
+        android:text="@string/clear"
+        app:layout_constraintBottom_toBottomOf="@+id/submitbasecal"
+        app:layout_constraintRight_toLeftOf="@id/submitbasecal"
+        app:layout_constraintLeft_toRightOf="@id/Ures"
+        />
+
+    <Button
+        android:id="@+id/fraction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/Yellow"
+        android:text="n/d"
+        app:layout_constraintStart_toStartOf="@+id/Ures"
+        app:layout_constraintTop_toBottomOf="@id/Ures" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

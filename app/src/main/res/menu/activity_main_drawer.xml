@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_main"
+            android:icon="@drawable/ic_baseline_calculate"
+            android:title="@string/Main" />
+        <item
+            android:id="@+id/nav_investment"
+            android:icon="@drawable/ic_baseline_investment"
+            android:title="@string/investment_planning" />
+        <item
+            android:id="@+id/nav_unitconverter"
+            android:icon="@drawable/ic_baseline_unitconverter"
+            android:title="@string/unit_conveter" />
+        <item
+            android:id="@+id/nav_basecaculator"
+            android:icon="@drawable/ic_baseline_adb_24"
+            android:title="@string/base_calculator" />
+        <item
+            android:id="@+id/nav_date"
+            android:icon="@drawable/ic_baseline_date"
+            android:title="@string/date_and_age_calculator" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@mipmap/ic_ibuttom"
+            android:title="@string/about" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_baseline_share_24"
+            android:title="@string/share" />
+
+
+    </group>
+</menu>

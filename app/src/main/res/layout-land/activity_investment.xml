@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Investment">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_investment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" >
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="50dp">
+            <RadioGroup
+                android:id="@+id/R1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/SI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Simple Interest"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/SIP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Continuous SIP(Monthly)"
+                    android:textSize="16sp" />
+
+
+            </RadioGroup>
+            <RadioGroup
+                android:id="@+id/R2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp">
+
+                <RadioButton
+                    android:id="@+id/CI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Compound Interest"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/CIandSIP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SIP for Limited Time"
+                    android:textSize="16sp" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="409dp"
+                android:layout_height="679dp"
+                android:orientation="vertical"
+                android:paddingTop="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/want"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/want_to_find"
+                        android:textSize="16sp" />
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:outlineAmbientShadowColor="@color/spinner"
+                        android:outlineSpotShadowColor="@color/spinner"
+                        android:textAlignment="center" />
+
+
+                </TableRow>
+
+
+                <TableRow
+                    android:id="@+id/principalTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/principal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="5dp"
+                        android:text="Principal Value:"
+                        android:textColor="@color/blackinvest"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/principalV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:textAlignment="center" />
+                </TableRow>
+
+                <TextView
+                    android:id="@+id/TotalTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Total Time"
+                    android:textColor="@color/blackinvest"
+                    android:textSize="16sp" />
+
+                <TableRow
+                    android:id="@+id/TotalTimeTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/Years"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="5dp"
+                        android:text="Years"
+                        android:textColor="@color/blackinvest"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/YearsV"
+                        android:layout_width="92dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/Months"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="5dp"
+                        android:text="Months"
+                        android:textColor="@color/blackinvest"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/MonthV"
+                        android:layout_width="92dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center" />
+
+                </TableRow>
+
+                <TextView
+                    android:id="@+id/SipCF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="SIP Continued For"
+                    android:textColor="@color/blackinvest"
+                    android:textSize="16sp" />
+
+                <TableRow
+                    android:id="@+id/sipCFtable"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/SipYears"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="5dp"
+                        android:text="Years"
+                        android:textColor="@color/blackinvest"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/SipYearsV"
+                        android:layout_width="92dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/SipMonths"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="5dp"
+                        android:text="Months"
+                        android:textColor="@color/blackinvest"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/SipMonthsV"
+                        android:layout_width="92dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/rateTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp">
+
+                    <TextView
+                        android:id="@+id/Rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="5dp"
+                        android:text="Rate"
+                        android:textColor="@color/blackinvest"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/RateV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/percent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:textColor="@color/blackinvest"
+                        android:textSize="18sp" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/amountTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp">
+
+                    <TextView
+                        android:id="@+id/Amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="5dp"
+                        android:text="Amount"
+                        android:textColor="@color/blackinvest"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/AmountV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:textAlignment="center" />
+                </TableRow>
+
+                <TextView
+                    android:id="@+id/Ans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/DarkGreen"
+                    android:textSize="19sp"
+                    android:textIsSelectable="true"/>
+
+                <Button
+                    android:id="@+id/Submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/Submit_investment"
+                    android:text="Submit" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
