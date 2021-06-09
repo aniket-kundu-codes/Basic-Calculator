@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.FileProvider;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -439,26 +441,37 @@ public class Date extends AppCompatActivity {
 
         FirstDate.setOnEditorActionListener(editorListener);
         SecondDate.setOnEditorActionListener(editorActionListener);
-        final boolean[] agecal = {false};
-        final boolean[] datecal = {false};
-        final boolean[] before = {false};
-        final boolean[] after = {false};
-        SecondDate.setEnabled(false);
-        Day.setEnabled(false);
-        radioAfter.setEnabled(false);
-        radioBefore.setEnabled(false);
-        FirstDate.setEnabled(false);
+
+
+        dateViewModel dvm= ViewModelProviders.of(this).get(dateViewModel.class);
+        Ans_view.setText(dvm.getText());
+        firstdatesuggestion.setText(dvm.getTopText());
+
+
+        final boolean[] agecal = {dvm.isAgecal()};
+        final boolean[] datecal = {dvm.isDatecal()};
+        final boolean[] before = {dvm.isBefore()};
+        final boolean[] after = {dvm.isAfter()};
+        SecondDate.setEnabled(dvm.isDatecal());
+        Day.setEnabled(dvm.isDatecal());
+        radioAfter.setEnabled(dvm.isDatecal());
+        radioBefore.setEnabled(dvm.isDatecal());
+        FirstDate.setEnabled(dvm.isDatecal()||dvm.isAgecal());
 
         radioagecal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                dvm.setAgecal(true);
+                dvm.setDatecal(false);
+
                 agecal[0]=true;
                 datecal[0]=false;
                 SecondDate.setEnabled(false);
                 Day.setEnabled(false);
                 radioAfter.setEnabled(false);
                 radioBefore.setEnabled(false);
-                firstdatesuggestion.setText("Enter Your DOB:");
+                dvm.setTopText("Enter Your DOB:");
+                firstdatesuggestion.setText(dvm.getTopText());
                 FirstDate.setEnabled(true);
 
             }
@@ -466,19 +479,26 @@ public class Date extends AppCompatActivity {
      radiodatecal.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View v) {
+             dvm.setAgecal(false);
+             dvm.setDatecal(true);
+
              agecal[0]=false;
              datecal[0]=true;
              SecondDate.setEnabled(true);
              Day.setEnabled(true);
              radioAfter.setEnabled(true);
              radioBefore.setEnabled(true);
-             firstdatesuggestion.setText("Enter Initial Date:");
+             dvm.setTopText("Enter Initial Date:");
+             firstdatesuggestion.setText(dvm.getTopText());
              FirstDate.setEnabled(true);
          }
      });
      radioAfter.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View v) {
+             dvm.setAfter(true);
+             dvm.setBefore(false);
+
              after[0]=true;
              before[0]=false;
          }
@@ -486,6 +506,9 @@ public class Date extends AppCompatActivity {
      radioBefore.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View v) {
+             dvm.setAfter(false);
+             dvm.setBefore(true);
+
              after[0]=false;
              before[0]=true;
          }
@@ -552,8 +575,8 @@ public class Date extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                String x=FirstDate.getText().toString();
                if(!x.equals(y)) {
-                 if(datecal[0])  firstdatesuggestion.setText("Enter Initial Date:");
-                    else if(agecal[0]) firstdatesuggestion.setText("Enter Your DOB");
+                 if(datecal[0]) {dvm.setTopText("Enter Initial Date:"); firstdatesuggestion.setText(dvm.getTopText());}
+                    else if(agecal[0]){ dvm.setTopText("Enter Your DOB");firstdatesuggestion.setText(dvm.getTopText());}
                }
                if(!x.equals(""))
                if(x.charAt(x.length()-1)=='/')
@@ -641,7 +664,8 @@ public class Date extends AppCompatActivity {
                     FD=java.time.LocalDate.now().toString();
                   divide_(FD,Fd,'-');
                   FirstDate.setText(Fd[0]+"/"+Fd[1]+"/"+Fd[2]);
-                  firstdatesuggestion.setText("Today's Date:");
+                  dvm.setTopText("Today's Date:");
+                  firstdatesuggestion.setText(dvm.getTopText());
                 }
                 if(datecal[0]){
                 String SD=SecondDate.getText().toString();
@@ -653,14 +677,19 @@ public class Date extends AppCompatActivity {
                    if(Vf_fd&&Vf_sd) {
                        if (isvalidDate(Fd[0], Fd[1], Fd[2])&&isvalidDate(Sd[0],Sd[1],Sd[2]))
                        { int No_of_days=CalDay(Fd[0], Fd[1], Fd[2],Sd[0],Sd[1],Sd[2]);
-                          Ans_view.setText("Days In Between is "+No_of_days);
+                          dvm.setText("Days In Between is "+No_of_days);
+                           Ans_view.setText(dvm.getText());
                        }
                        else
-                           Ans_view.setText("Enter a Valid Date");
+                       { dvm.setText("Enter a Valid Date");
+                           Ans_view.setText(dvm.getText());
+                       }
 
                    }
                    else
-                       Ans_view.setText("Enter Dates in Valid Format");
+                   { dvm.setText("Enter Dates in Valid Format");
+                       Ans_view.setText(dvm.getText());
+                   }
 
 
                 }
@@ -679,19 +708,29 @@ public class Date extends AppCompatActivity {
                             week_day = BweekDay(Fd[0], Fd[1], Fd[2], days);
                         }
                         if(after[0]||before[0])
-                        Ans_view.setText(Final_date + " fall on " + week_day);
+                        { dvm.setText(Final_date + " fall on " + week_day);
+                            Ans_view.setText(dvm.getText());
+                        }
                         else
-                            Ans_view.setText("Select After or Before");
+                        { dvm.setText("Select After or Before");
+                            Ans_view.setText(dvm.getText());
+                        }
                     }
                     else
-                        Ans_view.setText("Enter First Date in Valid Format");
+                    { dvm.setText("Enter First Date in Valid Format");
+                        Ans_view.setText(dvm.getText());
+                    }
 
 
                 }
                 else if(!Vf_fd)
-                    Ans_view.setText("Enter First Date in Valid Format");
+                { dvm.setText("Enter First Date in Valid Format");
+                    Ans_view.setText(dvm.getText());
+                }
                 else
-                    Ans_view.setText("Enter Unfilled Spaces");
+                { dvm.setText("Enter Unfilled Spaces");
+                    Ans_view.setText(dvm.getText());
+                }
 
             }
             else if(agecal[0])
@@ -701,17 +740,25 @@ public class Date extends AppCompatActivity {
                    int Cd[]=new int[3];
                     divide_(current_date,Cd,'-');
                     String age=CalAge(Fd[0],Fd[1],Fd[2],Cd[0],Cd[1],Cd[2]);
-                     Ans_view.setText(age);}
+                dvm.setText(age);
+                Ans_view.setText(dvm.getText());
+                }
                      else
-                    Ans_view.setText("Enter a Valid DOB");
+                { dvm.setText("Enter a Valid DOB");
+                    Ans_view.setText(dvm.getText());
+                }
 
                 }
                 else
-                    Ans_view.setText("Enter DOB in Valid Format");
+                { dvm.setText("Enter DOB in Valid Format");
+                    Ans_view.setText(dvm.getText());
+                }
 
                 }
             else
-                    Ans_view.setText("Select Age or Date");
+                { dvm.setText("Select Age or Date");
+                    Ans_view.setText(dvm.getText());
+                }
 
 
             }

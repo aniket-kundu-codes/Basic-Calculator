@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.FileProvider;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -251,6 +252,7 @@ public class Investment extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -291,6 +293,9 @@ public class Investment extends AppCompatActivity {
 
         sipCF.setVisibility(View.GONE);
         sipCFTable.setVisibility(View.GONE);
+
+        investmentViewModel ivm= ViewModelProviders.of(this).get(investmentViewModel.class);
+        ans.setText(ivm.getText());
 
         NavigationView nav_view=findViewById(R.id.nav_view);
         DrawerLayout drawerLayout=findViewById(R.id.drawer_layout);
@@ -345,10 +350,21 @@ public class Investment extends AppCompatActivity {
                 return true;
             }
         });
+       if(ivm.isSi()==true)
+       { ArrayAdapter adapter=new ArrayAdapter(Investment.this,android.R.layout.simple_spinner_item,item);
+           adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+           spinner.setAdapter(adapter);
+           R2.clearCheck();
+           sipCF.setVisibility(View.GONE);
+           sipCFTable.setVisibility(View.GONE);
+           totalTime.setVisibility(View.VISIBLE);
+           totalTimeTable.setVisibility(View.VISIBLE);
 
+       }
        si.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+               ivm.setSi(true);
                ArrayAdapter adapter=new ArrayAdapter(Investment.this,android.R.layout.simple_spinner_item,item);
                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                spinner.setAdapter(adapter);
@@ -360,9 +376,22 @@ public class Investment extends AppCompatActivity {
 
            }
        });
+       if(ivm.isSip()==true)
+       {
+           ArrayAdapter adapter=new ArrayAdapter(Investment.this,android.R.layout.simple_spinner_item,sipItem);
+           adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+           spinner.setAdapter(adapter);
+
+           R2.clearCheck();
+           sipCF.setVisibility(View.VISIBLE);
+           sipCFTable.setVisibility(View.VISIBLE);
+           totalTime.setVisibility(View.GONE);
+           totalTimeTable.setVisibility(View.GONE);
+       }
         sip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ivm.setSip(true);
                 ArrayAdapter adapter=new ArrayAdapter(Investment.this,android.R.layout.simple_spinner_item,sipItem);
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinner.setAdapter(adapter);
@@ -374,9 +403,21 @@ public class Investment extends AppCompatActivity {
                 totalTimeTable.setVisibility(View.GONE);
             }
         });
+       if (ivm.isCi()==true)
+       {
+           ArrayAdapter adapter=new ArrayAdapter(Investment.this,android.R.layout.simple_spinner_item,item);
+           adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+           spinner.setAdapter(adapter);
+           R1.clearCheck();
+           sipCF.setVisibility(View.GONE);
+           sipCFTable.setVisibility(View.GONE);
+           totalTime.setVisibility(View.VISIBLE);
+           totalTimeTable.setVisibility(View.VISIBLE);
+       }
         ci.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ivm.setCi(true);
                 ArrayAdapter adapter=new ArrayAdapter(Investment.this,android.R.layout.simple_spinner_item,item);
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinner.setAdapter(adapter);
@@ -389,9 +430,22 @@ public class Investment extends AppCompatActivity {
 
             }
         });
+       if(ivm.isCisip()==true)
+       { ArrayAdapter adapter=new ArrayAdapter(Investment.this,android.R.layout.simple_spinner_item,sipandciitem);
+           adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+           spinner.setAdapter(adapter);
+           R1.clearCheck();
+           sipCF.setVisibility(View.VISIBLE);
+           sipCFTable.setVisibility(View.VISIBLE);
+           totalTime.setVisibility(View.VISIBLE);
+           totalTimeTable.setVisibility(View.VISIBLE);
+
+
+       }
         cisip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ivm.setCisip(true);
                 ArrayAdapter adapter=new ArrayAdapter(Investment.this,android.R.layout.simple_spinner_item,sipandciitem);
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinner.setAdapter(adapter);
@@ -612,6 +666,7 @@ public class Investment extends AppCompatActivity {
                cc3 = 1;
            else if (cisip.isChecked())
                cc4 = 1;
+
            if (cc1 != 0 || cc2 != 0 || cc3 != 0 || cc4 != 0) {
                 String spinnerItem="Principal";
                 try{spinnerItem = spinner.getSelectedItem().toString();} catch (Exception e) {
@@ -631,13 +686,15 @@ public class Investment extends AppCompatActivity {
                       double A=correcting(amountVV);
                       String res=toTwoDigits(BigDecimal.valueOf(principalSI(T,R,A)).toPlainString());
                       if(res.charAt(0)!='N'&&res.charAt(0)!='I')
-                      ans.setText("Principal Value: Rs."+puttingComma(res));
+                      { ivm.setText("Principal Value: Rs."+puttingComma(res));
+                      ans.setText(ivm.getText());}
                       else
-                          ans.setText("Enter with Proper Value");
-
+                      { ivm.setText("Enter with Proper Value");
+                          ans.setText(ivm.getText());}
                     }
                    else
-                       ans.setText("Enter Unfilled Spaces");
+                   {ivm.setText("Enter Unfilled Spaces");
+                       ans.setText(ivm.getText());}
 
                   }
                     else if(cc2==1)
@@ -647,12 +704,15 @@ public class Investment extends AppCompatActivity {
                            double A=correcting(amountVV);
                            String res=toTwoDigits(BigDecimal.valueOf(principalCI(T,R,A)).toPlainString());
                            if(res.charAt(0)!='N'&&res.charAt(0)!='I')
-                               ans.setText("Principal Value: Rs."+puttingComma(res));
+                           { ivm.setText("Principal Value: Rs."+puttingComma(res));
+                               ans.setText(ivm.getText());}
                            else
-                               ans.setText("Enter with Proper Value");
+                           { ivm.setText("Enter with Proper Value");
+                               ans.setText(ivm.getText());}
                        }
                        else
-                           ans.setText("Enter Unfilled Spaces");
+                       {ivm.setText("Enter Unfilled Spaces");
+                           ans.setText(ivm.getText());}
 
                        }
                     else if(cc3==1)
@@ -662,12 +722,15 @@ public class Investment extends AppCompatActivity {
                                 double A=correcting(amountVV);
                                 String res=toTwoDigits(BigDecimal.valueOf(principalSip(n,r,A)).toPlainString());
                                 if(res.charAt(0)!='N'&&res.charAt(0)!='I')
-                                    ans.setText("Monthly Installment: Rs."+puttingComma(res));
+                                { ivm.setText("Monthly Installment: Rs."+puttingComma(res));
+                                    ans.setText(ivm.getText());}
                                 else
-                                    ans.setText("Enter with Proper Value");
+                                { ivm.setText("Enter with Proper Value");
+                                    ans.setText(ivm.getText());}
                             }
                             else
-                                ans.setText("Enter Unfilled Spaces");
+                            {ivm.setText("Enter Unfilled Spaces");
+                                ans.setText(ivm.getText());}
 
                             }
                     else if(cc4==1)
@@ -678,12 +741,15 @@ public class Investment extends AppCompatActivity {
                              double A=correcting(amountVV);
                              String res=toTwoDigits(BigDecimal.valueOf(principalcisip(n,T,R,A)).toPlainString());
                              if(res.charAt(0)!='N'&&res.charAt(0)!='I')
-                                 ans.setText("Monthly Installment: Rs."+puttingComma(res));
+                             { ivm.setText("Monthly Installment: Rs."+puttingComma(res));
+                                 ans.setText(ivm.getText());}
                              else
-                                 ans.setText("Enter with Proper Value");
+                             { ivm.setText("Enter with Proper Value");
+                                 ans.setText(ivm.getText());}
                          }
                          else
-                             ans.setText("Enter Unfilled Spaces");
+                         {ivm.setText("Enter Unfilled Spaces");
+                             ans.setText(ivm.getText());}
 
 
                          }
@@ -699,13 +765,17 @@ public class Investment extends AppCompatActivity {
                        String res=""+timeSI(P,R,A);
                        if(res.charAt(0)!='N'&&res.charAt(0)!='I') {
                            res=toYearMonthFromYear(timeSI(P,R,A));
-                           ans.setText("Total Time: "+res);
+                           ivm.setText("Total Time: "+res);
+                           ans.setText(ivm.getText());
                        }
                        else
-                           ans.setText("Enter with Proper Value");
+                       { ivm.setText("Enter with Proper Value");
+                           ans.setText(ivm.getText());}
                    }
                    else
-                       ans.setText("Enter Unfilled Spaces");
+                   {ivm.setText("Enter Unfilled Spaces");
+                       ans.setText(ivm.getText());}
+
 
                }
                else if(cc2==1)
@@ -716,13 +786,17 @@ public class Investment extends AppCompatActivity {
                    String res=""+timeCI(P,R,A);
                    if(res.charAt(0)!='N'&&res.charAt(0)!='I') {
                        res=toYearMonthFromYear(timeCI(P,R,A));
-                       ans.setText("Total Time: "+res);
+                       ivm.setText("Total Time: "+res);
+                       ans.setText(ivm.getText());
                    }
                    else
-                       ans.setText("Enter with Proper Value");
+                   { ivm.setText("Enter with Proper Value");
+                       ans.setText(ivm.getText());}
                }
                else
-                   ans.setText("Enter Unfilled Spaces");
+               {ivm.setText("Enter Unfilled Spaces");
+                   ans.setText(ivm.getText());}
+
 
                }
                else if(cc3==1)
@@ -733,13 +807,17 @@ public class Investment extends AppCompatActivity {
                    String res=""+timeSip(P,r,A);
                    if(res.charAt(0)!='N'&&res.charAt(0)!='I'){
                         res=toYearMonthFrommonth(timeSip(P,r,A));
-                       ans.setText("Total Time: "+res);//months
+                       ivm.setText("Total Time: "+res);
+                       ans.setText(ivm.getText());//months
                         }
                    else
-                       ans.setText("Enter with Proper Value");
+                   { ivm.setText("Enter with Proper Value");
+                       ans.setText(ivm.getText());}
                }
                else
-                   ans.setText("Enter Unfilled Spaces");
+               {ivm.setText("Enter Unfilled Spaces");
+                   ans.setText(ivm.getText());}
+
 
                }
                }
@@ -751,12 +829,15 @@ public class Investment extends AppCompatActivity {
                        double A=correcting(amountVV);
                        String res=toTwoDigits(BigDecimal.valueOf(rateSI(P,T,A)).toPlainString());
                        if(res.charAt(0)!='N'&&res.charAt(0)!='I')
-                           ans.setText("Annual Rate : "+res+"%");
+                       { ivm.setText("Annual Rate : "+res+"%");
+                           ans.setText(ivm.getText());}
                        else
-                           ans.setText("Enter with Proper Value");
+                       { ivm.setText("Enter with Proper Value");
+                           ans.setText(ivm.getText());}
                    }
                    else
-                       ans.setText("Enter Unfilled Spaces");
+                   {ivm.setText("Enter Unfilled Spaces");
+                       ans.setText(ivm.getText());}
 
                }
                else if(cc2==1)
@@ -766,12 +847,16 @@ public class Investment extends AppCompatActivity {
                        double A=correcting(amountVV);
                        String res=toTwoDigits(BigDecimal.valueOf(rateCI(P,T,A)).toPlainString());
                        if(res.charAt(0)!='N'&&res.charAt(0)!='I')
-                           ans.setText("Annual Rate: "+res+"%");
+                       {ivm.setText("Annual Rate : "+res+"%");
+                           ans.setText(ivm.getText());}
                        else
-                           ans.setText("Enter with Proper Value");
+                       { ivm.setText("Enter with Proper Value");
+                           ans.setText(ivm.getText());}
                    }
                else
-                   ans.setText("Enter Unfilled Spaces");
+               {ivm.setText("Enter Unfilled Spaces");
+                   ans.setText(ivm.getText());}
+
 
                } }
                else  if(spinnerItem.equalsIgnoreCase("Amount"))
@@ -783,12 +868,15 @@ public class Investment extends AppCompatActivity {
                        String res=toTwoDigits(BigDecimal.valueOf(amountSI(P,T,R)).toPlainString());
                        Log.d("Actual", "onClick: "+amountSI(P,T,R));
                        if(res.charAt(0)!='N'&&res.charAt(0)!='I')
-                           ans.setText("Total Amount: Rs"+puttingComma(res));
+                       { ivm.setText("Total Amount: Rs"+puttingComma(res));
+                           ans.setText(ivm.getText());}
                        else
-                           ans.setText("Enter with Proper Value");
+                       { ivm.setText("Enter with Proper Value");
+                           ans.setText(ivm.getText());}
                    }
                    else
-                       ans.setText("Enter Unfilled Spaces");
+                   {ivm.setText("Enter Unfilled Spaces");
+                       ans.setText(ivm.getText());}
 
                }
                else if(cc2==1)
@@ -798,12 +886,16 @@ public class Investment extends AppCompatActivity {
                    double R=correcting(rateVV);
                    String res=toTwoDigits(BigDecimal.valueOf(amountCI(P,T,R)).toPlainString());
                    if(res.charAt(0)!='N'&&res.charAt(0)!='I')
-                       ans.setText("Total Amount: Rs"+puttingComma(res));
+                   { ivm.setText("Total Amount: Rs"+puttingComma(res));
+                       ans.setText(ivm.getText());}
                    else
-                       ans.setText("Enter with Proper Value");
+                   { ivm.setText("Enter with Proper Value");
+                       ans.setText(ivm.getText());}
                }
                else
-                   ans.setText("Enter Unfilled Spaces");
+               {ivm.setText("Enter Unfilled Spaces");
+                   ans.setText(ivm.getText());}
+
 
                }
                else if(cc3==1)
@@ -813,14 +905,15 @@ public class Investment extends AppCompatActivity {
                    double r=toMonthlyRate(correcting(rateVV));
                    String res=toTwoDigits(BigDecimal.valueOf(amountSip(P,n,r)).toPlainString());
                    if(res.charAt(0)!='N'&&res.charAt(0)!='I')
-                       ans.setText("Total Amount: Rs"+puttingComma(res));
+                   { ivm.setText("Total Amount: Rs"+puttingComma(res));
+                       ans.setText(ivm.getText());}
                    else
-                       ans.setText("Enter with Proper Value");
-
+                   { ivm.setText("Enter with Proper Value");
+                       ans.setText(ivm.getText());}
                }
                else
-                   ans.setText("Enter Unfilled Spaces");
-
+               {ivm.setText("Enter Unfilled Spaces");
+                   ans.setText(ivm.getText());}
                }
                else if(cc4==1)
                {   if (!principalVV.equals("")&& !yearsVV.equals("") && !monthsVV.equals("")&&!sipYearsVV.equals("") && !sipMonthsVV.equals("")  &&!rateVV.equals(""))
@@ -830,12 +923,15 @@ public class Investment extends AppCompatActivity {
                    double R=correcting(rateVV);
                    String res=toTwoDigits(BigDecimal.valueOf(amountcisip(P,n,T,R)).toPlainString());
                    if(res.charAt(0)!='N'&&res.charAt(0)!='I')
-                       ans.setText("Total Amount: Rs"+puttingComma(res));
+                   { ivm.setText("Total Amount: Rs"+puttingComma(res));
+                       ans.setText(ivm.getText());}
                    else
-                       ans.setText("Enter with Proper Value");
+                   { ivm.setText("Enter with Proper Value");
+                       ans.setText(ivm.getText());}
                }
                else
-                   ans.setText("Enter Unfilled Spaces");
+               {ivm.setText("Enter Unfilled Spaces");
+                   ans.setText(ivm.getText());}
 
                }
                }

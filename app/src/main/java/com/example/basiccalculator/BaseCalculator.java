@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -244,8 +245,12 @@ public  static String calculateBase(String S,int base)
         ScrollView scrollViewBaseCal=findViewById(R.id.scrollViewBaseCal);
         LinearLayout linearLayout=findViewById(R.id.linearlayout);
 
+        baseCalculatorViewModel bvm= ViewModelProviders.of(this).get(baseCalculatorViewModel.class);
+
         Spinner spinner=findViewById(R.id.spinner2);
-        final int[] initialBase = {0};
+        final int[] initialBase = {bvm.getIbase()};
+        Number_value_basecal.setText(bvm.getText());
+        Number_value_basecal.setSelection(bvm.getText().length());
 
 
         ArrayAdapter arrayAdapter=new ArrayAdapter(BaseCalculator.this,android.R.layout.simple_spinner_item,spin);
@@ -326,6 +331,7 @@ public  static String calculateBase(String S,int base)
                             char ch2=text.charAt(len-1);
                             if(ch1==')'&&((ch2>='0'&&ch2<='9')||(ch2>='A'&&ch2<='Z')))
                             {   text=text.substring(0,len-1);
+                               bvm.setText(text);
                                 Number_value_basecal.setText(text);
                                 Number_value_basecal.setSelection(len-1);
                             }
@@ -347,7 +353,7 @@ public  static String calculateBase(String S,int base)
                 {
                        char ch=exp.charAt(exp.length()-1);
                     if(ch!='+'&&ch!='-'&&ch!='/'&&ch!='*'&&ch!='.'&&ch!='(')
-                       {
+                       {   bvm.setText(exp+"+");
                            Number_value_basecal.setText(exp+"+");
                            Number_value_basecal.setSelection(exp.length()+1);
                        }
@@ -363,12 +369,12 @@ public  static String calculateBase(String S,int base)
                 {
                     char ch=exp.charAt(exp.length()-1);
                     if(ch!='+'&&ch!='-'&&ch!='/'&&ch!='*'&&ch!='.')
-                    {
+                    { bvm.setText(exp+"-");
                         Number_value_basecal.setText(exp+"-");
                         Number_value_basecal.setSelection(exp.length()+1);
                     }
                 }
-                else {
+                else { bvm.setText("-");
                     Number_value_basecal.setText("-");
                     Number_value_basecal.setSelection(1);
                 }
@@ -382,7 +388,7 @@ public  static String calculateBase(String S,int base)
                 {
                     char ch=exp.charAt(exp.length()-1);
                     if(ch!='+'&&ch!='-'&&ch!='/'&&ch!='*'&&ch!='.'&&ch!='(')
-                    {
+                    { bvm.setText(exp+"*");
                         Number_value_basecal.setText(exp+"*");
                         Number_value_basecal.setSelection(exp.length()+1);
                     }
@@ -397,7 +403,7 @@ public  static String calculateBase(String S,int base)
                 {
                     char ch=exp.charAt(exp.length()-1);
                     if(ch!='+'&&ch!='-'&&ch!='/'&&ch!='*'&&ch!='.'&&ch!='(')
-                    {
+                    { bvm.setText(exp+"/");
                         Number_value_basecal.setText(exp+"/");
                         Number_value_basecal.setSelection(exp.length()+1);
                     }
@@ -423,41 +429,49 @@ public  static String calculateBase(String S,int base)
                     if(ch=='+'||ch=='-'||ch=='/'||ch=='*'||ch=='('||ch==')')
                     {
                       if(s==0&&exp.charAt(len-1)==')')
-                      {Number_value_basecal.setText(exp+"*(");
+                      {bvm.setText(exp+"*(");
+                          Number_value_basecal.setText(exp+"*(");
                           Number_value_basecal.setSelection(exp.length()+2);
 
                       }
                       else if(s==0)
-                      {Number_value_basecal.setText(exp+"(");
+                      {bvm.setText(exp+"(");
+                      Number_value_basecal.setText(exp+"(");
                           Number_value_basecal.setSelection(exp.length()+1);
 
                       }
                       else if((s>0)&&(ch=='+'||ch=='-'||ch=='/'||ch=='*')){
+                          bvm.setText(exp+"(");
                           Number_value_basecal.setText(exp+"(");
                           Number_value_basecal.setSelection(exp.length()+1);
 
                       }
                       else if(ch!='('){
+                          bvm.setText(exp+")");
                           Number_value_basecal.setText(exp+")");
                           Number_value_basecal.setSelection(exp.length()+1);
 
                       }
-                      else if(ch=='('){ Number_value_basecal.setText(exp+"(");
+                      else if(ch=='('){
+                          bvm.setText(exp+"(");
+                          Number_value_basecal.setText(exp+"(");
                           Number_value_basecal.setSelection(exp.length()+1);
 
                       }
                     }
                     else if(s>0&&exp.charAt(exp.length()-1)!='.')
-                    {Number_value_basecal.setText(exp+")");
+                    {   bvm.setText(exp+")");
+                        Number_value_basecal.setText(exp+")");
                         Number_value_basecal.setSelection(exp.length()+1);
                     }
                     else if(exp.charAt(exp.length()-1)!='.')
-                    {   Number_value_basecal.setText(exp+"*(");
+                    {  bvm.setText(exp+"*(");
+                        Number_value_basecal.setText(exp+"*(");
                         Number_value_basecal.setSelection(exp.length()+2);
                     }
                 }}
                 else
-                {
+                {bvm.setText("(");
                     Number_value_basecal.setText("(");
                     Number_value_basecal.setSelection(1);
                 }
@@ -470,6 +484,7 @@ public  static String calculateBase(String S,int base)
                 if(!exp.equals(""))
                 {
                     exp=exp.substring(0,exp.length()-1);
+                    bvm.setText(exp);
                     Number_value_basecal.setText(exp);
                     Number_value_basecal.setSelection(exp.length());
                 }
@@ -478,6 +493,7 @@ public  static String calculateBase(String S,int base)
         delbasecal.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
+                bvm.setText("");
                 Number_value_basecal.setText("");
                 Number_value_basecal.setSelection(0);
                 return true;
@@ -517,6 +533,7 @@ public  static String calculateBase(String S,int base)
                 edit.clear();
                 edit.apply();
                 spId[0]=0;
+                bvm.setText("");
                 Number_value_basecal.setText("");
             }
         });
@@ -604,12 +621,14 @@ public  static String calculateBase(String S,int base)
                     a=Integer.valueOf(x);
                 if(a>1)
                 {    int ibase=initialBase[0];
+                    bvm.setIbase(a);
                     initialBase[0]=a;
                     bases.clearCheck();
                     String value=Number_value_basecal.getText().toString();
                     if(!value.equals("")) {
                         incorrect=false;err=false;
                         value=convertExpToSomeBase(value, ibase, initialBase[0]);
+                        bvm.setText(value);
                         Number_value_basecal.setText(value);
                         Number_value_basecal.setSelection(value.length());  }
                 }
@@ -625,11 +644,13 @@ public  static String calculateBase(String S,int base)
             public void onClick(View v) {
                 spinner.setSelection(0);
                 int ibase=initialBase[0];
+                bvm.setIbase(16);
                 initialBase[0]=16;
                 String value=Number_value_basecal.getText().toString();
                 if(!value.equals("")) {
                     incorrect=false;err=false;
                     value=convertExpToSomeBase(value, ibase, initialBase[0]);
+                    bvm.setText(value);
                     Number_value_basecal.setText(value);
                     Number_value_basecal.setSelection(value.length());
 
@@ -641,11 +662,13 @@ public  static String calculateBase(String S,int base)
             public void onClick(View v) {
                 spinner.setSelection(0);
                 int ibase=initialBase[0];
+                bvm.setIbase(10);
                 initialBase[0]=10;
                 String value=Number_value_basecal.getText().toString();
                 if(!value.equals(""))
                 {incorrect=false;err=false;
                     value=convertExpToSomeBase(value, ibase, initialBase[0]);
+                    bvm.setText(value);
                     Number_value_basecal.setText(value);
                     Number_value_basecal.setSelection(value.length());
 
@@ -657,11 +680,13 @@ public  static String calculateBase(String S,int base)
             public void onClick(View v) {
                 spinner.setSelection(0);
                 int ibase=initialBase[0];
+                bvm.setIbase(8);
                 initialBase[0]=8;
                 String value=Number_value_basecal.getText().toString();
                 if(!value.equals(""))
                 {incorrect=false;err=false;
                     value=convertExpToSomeBase(value, ibase, initialBase[0]);
+                    bvm.setText(value);
                     Number_value_basecal.setText(value);
                     Number_value_basecal.setSelection(value.length());
 
@@ -673,11 +698,13 @@ public  static String calculateBase(String S,int base)
             public void onClick(View v) {
                 spinner.setSelection(0);
                 int ibase=initialBase[0];
+                bvm.setIbase(2);
                 initialBase[0]=2;
                 String value=Number_value_basecal.getText().toString();
                 if(!value.equals(""))
                 {incorrect=false;err=false;
                     value=convertExpToSomeBase(value, ibase, initialBase[0]);
+                    bvm.setText(value);
                     Number_value_basecal.setText(value);
                     Number_value_basecal.setSelection(value.length());
 
@@ -699,6 +726,7 @@ public  static String calculateBase(String S,int base)
                           break;
                   }
                         if(dotP==0&&i!=l-1) {
+                            bvm.setText(Number_value_basecal.getText().toString() + dott.getText().toString());
                             Number_value_basecal.setText(Number_value_basecal.getText().toString() + dott.getText().toString());
                             Number_value_basecal.setSelection(Number_value_basecal.getText().length());
                         }
@@ -710,6 +738,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {   if (0 < initialBase[0]) {
+                    bvm.setText(Number_value_basecal.getText().toString() + __0.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + __0.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
                 }
@@ -720,6 +749,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {   if (1 < initialBase[0]) {
+                    bvm.setText(Number_value_basecal.getText().toString() + __1.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + __1.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
                 }
@@ -730,6 +760,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {   if (2 < initialBase[0]) {
+                    bvm.setText(Number_value_basecal.getText().toString() + __2.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + __2.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
                 }
@@ -740,6 +771,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {   if (3 < initialBase[0]) {
+                    bvm.setText(Number_value_basecal.getText().toString() + _3.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + _3.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
                 }
@@ -750,6 +782,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {   if (4 < initialBase[0]) {
+                    bvm.setText(Number_value_basecal.getText().toString() + _4.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + _4.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
                 }
@@ -760,6 +793,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {   if (5 < initialBase[0]) {
+                    bvm.setText(Number_value_basecal.getText().toString() + _5.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + _5.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
                 }
@@ -770,6 +804,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {   if (6 < initialBase[0]) {
+                    bvm.setText(Number_value_basecal.getText().toString() + _6.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + _6.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
                 }
@@ -780,6 +815,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {   if (7 < initialBase[0]) {
+                    bvm.setText(Number_value_basecal.getText().toString() + _7.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + _7.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
                 }
@@ -790,6 +826,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {   if (8 < initialBase[0]) {
+                    bvm.setText(Number_value_basecal.getText().toString() + _8.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + _8.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
                 }
@@ -800,6 +837,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {   if (9 < initialBase[0]) {
+                    bvm.setText(Number_value_basecal.getText().toString() + _9.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + _9.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
                 }
@@ -812,6 +850,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {   if ('A' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + a.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + a.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
                 }
@@ -822,6 +861,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 { if ('B' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + b.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + b.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -832,6 +872,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 { if ('C' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + c.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + c.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -842,6 +883,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {if ('D' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + d.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + d.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
                 }
@@ -851,6 +893,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 { if ('E' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + e.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + e.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -861,6 +904,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {if ('F' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + f.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + f.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -871,6 +915,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {if ('G' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + g.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + g.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -882,6 +927,7 @@ public  static String calculateBase(String S,int base)
             public void onClick(View v) {
                 {
                     if ('H' < (55 + initialBase[0])) {
+                        bvm.setText(Number_value_basecal.getText().toString() + h.getText().toString());
                         Number_value_basecal.setText(Number_value_basecal.getText().toString() + h.getText().toString());
                         Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -892,6 +938,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 { if ('I' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + i.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + i.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -902,6 +949,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 { if ('J' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + j.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + j.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -912,6 +960,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 { if ('K' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + k.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + k.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -922,6 +971,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 { if ('L' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + l.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + l.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -932,6 +982,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {if ('M' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + m.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + m.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -942,6 +993,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 { if ('N' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + n.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + n.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -951,6 +1003,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {if ('O' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + o.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + o.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -961,6 +1014,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {if ('P' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + p.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + p.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -971,6 +1025,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {  if ('Q' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + q.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + q.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -981,6 +1036,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {if ('R' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + r.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + r.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
                 }
@@ -990,6 +1046,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {if ('S' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + s.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + s.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -1000,6 +1057,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 { if ('T' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + t.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + t.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -1010,6 +1068,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 { if ('U' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + u.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + u.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -1020,6 +1079,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {if ('V' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + "V");
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + "V");
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -1030,6 +1090,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {if ('W' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + w.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + w.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -1040,6 +1101,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 { if ('X' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + x.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + x.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -1050,6 +1112,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {if ('Y' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + y.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + y.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 
@@ -1060,6 +1123,7 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 {if ('Z' < (55 + initialBase[0])) {
+                    bvm.setText(Number_value_basecal.getText().toString() + z.getText().toString());
                     Number_value_basecal.setText(Number_value_basecal.getText().toString() + z.getText().toString());
                     Number_value_basecal.setSelection(Number_value_basecal.getText().length());
 

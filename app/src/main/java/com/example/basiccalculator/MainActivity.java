@@ -189,21 +189,39 @@ public class MainActivity extends AppCompatActivity {
             double e1=Math.exp(value);
             double e2=Math.exp((-1)*value);
             if(m.equalsIgnoreCase("sin"))
+            {   if(!check(value/90))  //not perfectly divides
                 ans=Math.sin(value/convert);
+               else
+            {   double newValue=(int)value%360;
+                 ans=newValue==0?0:newValue==90?1:newValue==180?0:-1;
+            }
+            }
             else if(m.equalsIgnoreCase("sinh"))
                 ans=(e1-e2)/2.0;
             else if(m.equalsIgnoreCase("sin-1"))
                 ans=Math.asin(value)*convert;
 
             else if(m.equalsIgnoreCase("cos"))
+            {    if(!check(value/90))
                 ans=Math.cos(value/convert);
+            else
+            {   double newValue=(int)value%360;
+                ans=newValue==0?1:newValue==90?0:newValue==180?-1:0;
+            }
+            }
             else if(m.equalsIgnoreCase("cosh"))
                 ans=(e1+e2)/2.0;
             else if(m.equalsIgnoreCase("cos-1"))
                 ans=Math.acos(value)*convert;
 
             else if(m.equalsIgnoreCase("tan"))
+            {    if(!check(value/90))
                 ans=Math.tan(value/convert);
+            else
+            {   double newValue=(int)value%360;
+                ans=newValue==0?0:newValue==90?1.0/0:newValue==180?0:-1.0/0;
+            }
+            }
             else if(m.equalsIgnoreCase("tanh"))
                 ans=(e1-e2)/(e1+e2);
             else if(m.equalsIgnoreCase("tan-1"))
