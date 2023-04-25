@@ -130,13 +130,21 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 'C':boolean O=check(m);
                 boolean P=check(n);
-//                double x1=fact((int)m);
-//                double x2=(fact((int)n)*fact((int)(m-n)));
                 if((O==true&&P==true)&&m>=n) {
                     int upto=(int)Math.max(n,m-n);
                     int deno=(int)Math.min(n,m-n);
-                    double num=factUptoSome((int)m,upto);
-                    x.val =num/deno;
+
+                    int res=1;
+                    for(int i=(int)m;i>upto;i--)
+                    {
+                        res*=i;
+                        if(deno!=0 && res%deno==0)
+                        {
+                            res/=deno;
+                            deno--;
+                        }
+                    }
+                    x.val =res;
                 }
                 else
                 {x.val=0.0;

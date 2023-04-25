@@ -56,100 +56,100 @@ public class BaseCalculator extends AppCompatActivity{
     static boolean err=false;
     public static String addFinishingBrackets(String x)
     {String ans=x;
-    int l=x.length(),s=0;
-    for(int i=0;i<l;i++)
-    {
-        char ch=x.charAt(i);
-        if(ch=='(')
-            s++;
-        else if(ch==')')
-            s--;
-    }
-    for(int i=1;i<=s;i++)
-        ans+=')';
+        int l=x.length(),s=0;
+        for(int i=0;i<l;i++)
+        {
+            char ch=x.charAt(i);
+            if(ch=='(')
+                s++;
+            else if(ch==')')
+                s--;
+        }
+        for(int i=1;i<=s;i++)
+            ans+=')';
 
-    return ans;
+        return ans;
     }
     public static String removeDecPointAndTrailingZerosIfReq(String x)
     {String y=x;
-     if(x.indexOf('.')!=-1)
-     {
-         int l=x.length();
-         int point=x.indexOf('.');
-         if(point+2==l&&x.charAt(point+1)=='0')
-             y=x.substring(0,point);
-         else
-         {  for(int i=l-1;i>point;i--)
-             if(x.charAt(i)=='0')
-                 y=x.substring(0,i);
-             else
-                 break;
+        if(x.indexOf('.')!=-1)
+        {
+            int l=x.length();
+            int point=x.indexOf('.');
+            if(point+2==l&&x.charAt(point+1)=='0')
+                y=x.substring(0,point);
+            else
+            {  for(int i=l-1;i>point;i--)
+                if(x.charAt(i)=='0')
+                    y=x.substring(0,i);
+                else
+                    break;
 
-         }
-     }
-     return y;
+            }
+        }
+        return y;
     }
-public static String[] storeValuesofAnybase(String x)
-{  int len=x.length();
-    String []val=new String[len];
-    Arrays.fill(val,"");
-    int count=0;int flag=1;
-    for(int i=0;i<len;i++)
-    {
-        char ch=x.charAt(i);
-        if(ch!='+'&&ch!='-'&&ch!='/'&&ch!='*'&&ch!='('&&ch!=')')
-        { val[count]+=ch;flag=0;}
-        else if(flag==0)
-        {count++;flag=1;}
+    public static String[] storeValuesofAnybase(String x)
+    {  int len=x.length();
+        String []val=new String[len];
+        Arrays.fill(val,"");
+        int count=0;int flag=1;
+        for(int i=0;i<len;i++)
+        {
+            char ch=x.charAt(i);
+            if(ch!='+'&&ch!='-'&&ch!='/'&&ch!='*'&&ch!='('&&ch!=')')
+            { val[count]+=ch;flag=0;}
+            else if(flag==0)
+            {count++;flag=1;}
+        }
+        return val;
     }
-    return val;
-}
 
-public static String[] convertValuesToSomeBase(String []val,int ibase,int fbase)
-{      String va[]=new String[val.length];
-            for(int i=0;i<val.length;i++)
-            { va[i]=convert(val[i],ibase,fbase);
+    public static String[] convertValuesToSomeBase(String []val,int ibase,int fbase)
+    {      String va[]=new String[val.length];
+        for(int i=0;i<val.length;i++)
+        { va[i]=convert(val[i],ibase,fbase);
             if(va[i].equals("")&&(!val[i].equals("")))
             {err=true;break;}}
-            return  va;
-}
+        return  va;
+    }
 
     public static String convertExpToSomeBase(String original,int ibase,int fbase)
-{  String modified="";
-         if(ibase!=fbase)
-         { String val[]=storeValuesofAnybase(original);
-         String va[]=convertValuesToSomeBase(val,ibase,fbase);
-         if(err==false){
-         int  count=0;
-         for(int i=0;i<original.length();i++)
-         { char ch=original.charAt(i);
-           if(ch=='+'||ch=='-'||ch=='/'||ch=='*'||ch=='('||ch==')')
-           modified+=ch;
-            else
-           {    modified+=removeDecPointAndTrailingZerosIfReq(va[count]);
-                i=i+val[count].length()-1;
-                count++;
-           }
-         }}}
-         else modified=original;
-         return modified;
-}
-public  static String calculateBase(String S,int base)
-{    String decExp=convertExpToSomeBase(S,base,10);
-    String finalAns="Error";
-    if(err==false){
-     double ansInDec=calculate(decExp);
-     if(!(String.valueOf(ansInDec).equals("Infinity")||String.valueOf(ansInDec).equals("NaN")))
-     {String x=BigDecimal.valueOf(ansInDec).toPlainString();int minus=0;
-     if(x.charAt(0)=='-')
-     {x=x.substring(1);
-     minus=1;}
-     finalAns=convert(x,10,base);
-     if(minus==1)
-     finalAns="-"+finalAns;}}
-     return finalAns;
+    {  String modified="";
+        if(ibase!=fbase)
+        { String val[]=storeValuesofAnybase(original);
+            String va[]=convertValuesToSomeBase(val,ibase,fbase);
+            if(err==false){
+                int  count=0;
+                for(int i=0;i<original.length();i++)
+                { char ch=original.charAt(i);
+                    if(ch=='+'||ch=='-'||ch=='/'||ch=='*'||ch=='('||ch==')')
+                        modified+=ch;
+                    else
+                    {    modified+=removeDecPointAndTrailingZerosIfReq(va[count]);
+                        i=i+val[count].length()-1;
+                        count++;
+                    }
+                }}}
+        else modified=original;
+        return modified;
+    }
+    public  static String calculateBase(String S,int base)
+    {    String decExp=convertExpToSomeBase(S,base,10);
+        String finalAns="Error";
+        if(err==false){
+            double ansInDec=calculate(decExp);
+            if(!(String.valueOf(ansInDec).equals("Infinity")||String.valueOf(ansInDec).equals("NaN")))
+            {String x=BigDecimal.valueOf(ansInDec).toPlainString();int minus=0;
+                if(x.charAt(0)=='-')
+                {x=x.substring(1);
+                    minus=1;}
+                finalAns=convert(x,10,base);
+                if(minus==1)
+                    finalAns="-"+finalAns;}}
+        return finalAns;
 
-}
+    }
     public void shareApp()
     {
         ApplicationInfo app=getApplicationContext().getApplicationInfo();
@@ -262,7 +262,7 @@ public  static String calculateBase(String S,int base)
         DrawerLayout drawerLayout=findViewById(R.id.drawer_layout);
         ImageButton toggle=findViewById(R.id.toggle);
 
-       Number_value_basecal.setShowSoftInputOnFocus(false);
+        Number_value_basecal.setShowSoftInputOnFocus(false);
 
         toggle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -308,42 +308,42 @@ public  static String calculateBase(String S,int base)
                 else if(item.getItemId()==R.id.nav_about)
                     startActivity(new Intent(BaseCalculator.this,About.class));
                 else if(item.getItemId()==R.id.nav_share)
-                shareApp();
+                    shareApp();
                 drawerLayout.closeDrawer(GravityCompat.START);
 
                 return true;
             }
         });
-            Number_value_basecal.addTextChangedListener(new TextWatcher() {
-                @Override
-                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        Number_value_basecal.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-                }
+            }
 
-                @Override
-                public void onTextChanged(CharSequence s, int start, int before, int count) {
-                      String text=Number_value_basecal.getText().toString();
-                      if(!text.equals(""))
-                      {int len=text.length();
-                        if(len>=2)
-                        {
-                            char ch1=text.charAt(len-2);
-                            char ch2=text.charAt(len-1);
-                            if(ch1==')'&&((ch2>='0'&&ch2<='9')||(ch2>='A'&&ch2<='Z')))
-                            {   text=text.substring(0,len-1);
-                               bvm.setText(text);
-                                Number_value_basecal.setText(text);
-                                Number_value_basecal.setSelection(len-1);
-                            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String text=Number_value_basecal.getText().toString();
+                if(!text.equals(""))
+                {int len=text.length();
+                    if(len>=2)
+                    {
+                        char ch1=text.charAt(len-2);
+                        char ch2=text.charAt(len-1);
+                        if(ch1==')'&&((ch2>='0'&&ch2<='9')||(ch2>='A'&&ch2<='Z')))
+                        {   text=text.substring(0,len-1);
+                            bvm.setText(text);
+                            Number_value_basecal.setText(text);
+                            Number_value_basecal.setSelection(len-1);
                         }
-                      }
+                    }
                 }
+            }
 
-                @Override
-                public void afterTextChanged(Editable s) {
+            @Override
+            public void afterTextChanged(Editable s) {
 
-                }
-            });
+            }
+        });
 
         plusbasecal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -351,12 +351,12 @@ public  static String calculateBase(String S,int base)
                 String exp=Number_value_basecal.getText().toString();
                 if(!exp.equals(""))
                 {
-                       char ch=exp.charAt(exp.length()-1);
+                    char ch=exp.charAt(exp.length()-1);
                     if(ch!='+'&&ch!='-'&&ch!='/'&&ch!='*'&&ch!='.'&&ch!='(')
-                       {   bvm.setText(exp+"+");
-                           Number_value_basecal.setText(exp+"+");
-                           Number_value_basecal.setSelection(exp.length()+1);
-                       }
+                    {   bvm.setText(exp+"+");
+                        Number_value_basecal.setText(exp+"+");
+                        Number_value_basecal.setSelection(exp.length()+1);
+                    }
                 }
             }
         });
@@ -414,68 +414,68 @@ public  static String calculateBase(String S,int base)
             @Override
             public void onClick(View v) {
                 if(initialBase[0]!=0){
-                String exp=Number_value_basecal.getText().toString();
-                if(!exp.equals(""))
-                { if(exp.charAt(0)!='.'){
-                    int s=0;int len=exp.length();
-                    for(int i=0;i<len;i++)
-                    {   char cc=exp.charAt(i);
-                        if(cc=='(')
-                            s++;
-                        else if(cc==')')
-                            s--;
-                    }
-                    char ch=exp.charAt(exp.length()-1);
-                    if(ch=='+'||ch=='-'||ch=='/'||ch=='*'||ch=='('||ch==')')
-                    {
-                      if(s==0&&exp.charAt(len-1)==')')
-                      {bvm.setText(exp+"*(");
-                          Number_value_basecal.setText(exp+"*(");
-                          Number_value_basecal.setSelection(exp.length()+2);
+                    String exp=Number_value_basecal.getText().toString();
+                    if(!exp.equals(""))
+                    { if(exp.charAt(0)!='.'){
+                        int s=0;int len=exp.length();
+                        for(int i=0;i<len;i++)
+                        {   char cc=exp.charAt(i);
+                            if(cc=='(')
+                                s++;
+                            else if(cc==')')
+                                s--;
+                        }
+                        char ch=exp.charAt(exp.length()-1);
+                        if(ch=='+'||ch=='-'||ch=='/'||ch=='*'||ch=='('||ch==')')
+                        {
+                            if(s==0&&exp.charAt(len-1)==')')
+                            {bvm.setText(exp+"*(");
+                                Number_value_basecal.setText(exp+"*(");
+                                Number_value_basecal.setSelection(exp.length()+2);
 
-                      }
-                      else if(s==0)
-                      {bvm.setText(exp+"(");
-                      Number_value_basecal.setText(exp+"(");
-                          Number_value_basecal.setSelection(exp.length()+1);
+                            }
+                            else if(s==0)
+                            {bvm.setText(exp+"(");
+                                Number_value_basecal.setText(exp+"(");
+                                Number_value_basecal.setSelection(exp.length()+1);
 
-                      }
-                      else if((s>0)&&(ch=='+'||ch=='-'||ch=='/'||ch=='*')){
-                          bvm.setText(exp+"(");
-                          Number_value_basecal.setText(exp+"(");
-                          Number_value_basecal.setSelection(exp.length()+1);
+                            }
+                            else if((s>0)&&(ch=='+'||ch=='-'||ch=='/'||ch=='*')){
+                                bvm.setText(exp+"(");
+                                Number_value_basecal.setText(exp+"(");
+                                Number_value_basecal.setSelection(exp.length()+1);
 
-                      }
-                      else if(ch!='('){
-                          bvm.setText(exp+")");
-                          Number_value_basecal.setText(exp+")");
-                          Number_value_basecal.setSelection(exp.length()+1);
+                            }
+                            else if(ch!='('){
+                                bvm.setText(exp+")");
+                                Number_value_basecal.setText(exp+")");
+                                Number_value_basecal.setSelection(exp.length()+1);
 
-                      }
-                      else if(ch=='('){
-                          bvm.setText(exp+"(");
-                          Number_value_basecal.setText(exp+"(");
-                          Number_value_basecal.setSelection(exp.length()+1);
+                            }
+                            else if(ch=='('){
+                                bvm.setText(exp+"(");
+                                Number_value_basecal.setText(exp+"(");
+                                Number_value_basecal.setSelection(exp.length()+1);
 
-                      }
-                    }
-                    else if(s>0&&exp.charAt(exp.length()-1)!='.')
-                    {   bvm.setText(exp+")");
-                        Number_value_basecal.setText(exp+")");
-                        Number_value_basecal.setSelection(exp.length()+1);
-                    }
-                    else if(exp.charAt(exp.length()-1)!='.')
-                    {  bvm.setText(exp+"*(");
-                        Number_value_basecal.setText(exp+"*(");
-                        Number_value_basecal.setSelection(exp.length()+2);
+                            }
+                        }
+                        else if(s>0&&exp.charAt(exp.length()-1)!='.')
+                        {   bvm.setText(exp+")");
+                            Number_value_basecal.setText(exp+")");
+                            Number_value_basecal.setSelection(exp.length()+1);
+                        }
+                        else if(exp.charAt(exp.length()-1)!='.')
+                        {  bvm.setText(exp+"*(");
+                            Number_value_basecal.setText(exp+"*(");
+                            Number_value_basecal.setSelection(exp.length()+2);
+                        }
+                    }}
+                    else
+                    {bvm.setText("(");
+                        Number_value_basecal.setText("(");
+                        Number_value_basecal.setSelection(1);
                     }
                 }}
-                else
-                {bvm.setText("(");
-                    Number_value_basecal.setText("(");
-                    Number_value_basecal.setSelection(1);
-                }
-            }}
         });
         delbasecal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -500,30 +500,30 @@ public  static String calculateBase(String S,int base)
             }
         });
         SharedPreferences sharedPreferences=getSharedPreferences("BaseCalculator",MODE_PRIVATE);
-       final int id[]={0};
+        final int id[]={0};
         while(sharedPreferences.contains(""+id[0]))
         {   TextView tv=new TextView(BaseCalculator.this);
             tv.setTextIsSelectable(true);
 
-           if(sharedPreferences.contains(""+(id[0]+1)))
-           {tv.setTextColor(ContextCompat.getColor(BaseCalculator.this, R.color.blackinvest));
-            tv.setTextSize(16);
-           }
-           else
-           {tv.setTextSize(20);
-               tv.setTextColor(getResources().getColor(R.color.lightsky));
-           }
-           tv.setText(sharedPreferences.getString(""+id[0],""));
-           linearLayout.addView(tv);
-              id[0]++;
+            if(sharedPreferences.contains(""+(id[0]+1)))
+            {tv.setTextColor(ContextCompat.getColor(BaseCalculator.this, R.color.blackinvest));
+                tv.setTextSize(16);
+            }
+            else
+            {tv.setTextSize(20);
+                tv.setTextColor(getResources().getColor(R.color.lightsky));
+            }
+            tv.setText(sharedPreferences.getString(""+id[0],""));
+            linearLayout.addView(tv);
+            id[0]++;
         }
         if(linearLayout.getBottom()!=-1)
-        scrollViewBaseCal.post(new Runnable() {
-            @Override
-            public void run() {
-                scrollViewBaseCal.scrollTo(0,linearLayout.getBottom());
-            }
-        });
+            scrollViewBaseCal.post(new Runnable() {
+                @Override
+                public void run() {
+                    scrollViewBaseCal.scrollTo(0,linearLayout.getBottom());
+                }
+            });
         final int[] spId = {linearLayout.getChildCount()};
         clearbasecal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -560,31 +560,31 @@ public  static String calculateBase(String S,int base)
 
                 if(initialBase[0]!=0){
                     {  String expInBase=Number_value_basecal.getText().toString();
-                    incorrect=false;err=false;
-                    String x=calculateBase(expInBase,initialBase[0]);
+                        incorrect=false;err=false;
+                        String x=calculateBase(expInBase,initialBase[0]);
                         String finalExp=removeDecPointAndTrailingZerosIfReq(calculateBase(expInBase,initialBase[0]));
                         if(incorrect==false&&!finalExp.equals(""))
                         {  if(!finalExp.equals("Error"))
                         { if(linearLayout.getChildCount()!=0)
                             tv.setText("\n"+addFinishingBrackets(expInBase)+"\n="+finalExp+" base("+initialBase[0]+")");
-                            else
-                                tv.setText(addFinishingBrackets(expInBase)+"\n="+finalExp+" base("+initialBase[0]+")");}
+                        else
+                            tv.setText(addFinishingBrackets(expInBase)+"\n="+finalExp+" base("+initialBase[0]+")");}
                         else
                             tv.setText(finalExp);
-                                if(!finalExp.equals("Error"))
-                                {  if(linearLayout.getChildCount()!=0)
-                                    edit.putString("" + spId[0],"\n"+addFinishingBrackets(expInBase)+"\n="+finalExp+" base("+initialBase[0]+")");
-                               else edit.putString("" + spId[0],addFinishingBrackets(expInBase)+"\n="+finalExp+" base("+initialBase[0]+")");
+                            if(!finalExp.equals("Error"))
+                            {  if(linearLayout.getChildCount()!=0)
+                                edit.putString("" + spId[0],"\n"+addFinishingBrackets(expInBase)+"\n="+finalExp+" base("+initialBase[0]+")");
+                            else edit.putString("" + spId[0],addFinishingBrackets(expInBase)+"\n="+finalExp+" base("+initialBase[0]+")");
 
-                                    edit.apply();
+                                edit.apply();
                                 spId[0]++;}
 
-                        err=false;}
+                            err=false;}
                         else
                         {  if(linearLayout.getChildCount()!=0)
                             tv.setText("\nError");
                         else tv.setText("Error");
-                        incorrect=false;err=false;}
+                            incorrect=false;err=false;}
 
                         linearLayout.addView(tv);
                         scrollViewBaseCal.post(new Runnable() {
@@ -597,7 +597,7 @@ public  static String calculateBase(String S,int base)
 
                 }else {
                     if(linearLayout.getChildCount()!=0)
-                    tv.setText("\nSelect Base");
+                        tv.setText("\nSelect Base");
                     else
                         tv.setText("Select Base");
                     linearLayout.addView(tv);
@@ -716,21 +716,21 @@ public  static String calculateBase(String S,int base)
             public void onClick(View v) {
                 String x=Number_value_basecal.getText().toString();
                 int l=x.length();int dotP=0;int i=0;
-                  if(l>0)
-                  {  for(i=l-1;i>=0;i--)
-                  {
-                      char cc=x.charAt(i);
-                      if(cc=='.')
-                          dotP++;
-                      if(cc=='+'||cc=='-'||cc=='*'||cc=='/'||cc=='('||cc==')')
-                          break;
-                  }
-                        if(dotP==0&&i!=l-1) {
-                            bvm.setText(Number_value_basecal.getText().toString() + dott.getText().toString());
-                            Number_value_basecal.setText(Number_value_basecal.getText().toString() + dott.getText().toString());
-                            Number_value_basecal.setSelection(Number_value_basecal.getText().length());
-                        }
-                    }}
+                if(l>0)
+                {  for(i=l-1;i>=0;i--)
+                {
+                    char cc=x.charAt(i);
+                    if(cc=='.')
+                        dotP++;
+                    if(cc=='+'||cc=='-'||cc=='*'||cc=='/'||cc=='('||cc==')')
+                        break;
+                }
+                    if(dotP==0&&i!=l-1) {
+                        bvm.setText(Number_value_basecal.getText().toString() + dott.getText().toString());
+                        Number_value_basecal.setText(Number_value_basecal.getText().toString() + dott.getText().toString());
+                        Number_value_basecal.setSelection(Number_value_basecal.getText().length());
+                    }
+                }}
 
         });
 

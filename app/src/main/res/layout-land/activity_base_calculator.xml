@@ -102,7 +102,7 @@
                 <Button
                     android:id="@+id/__1"
                     android:layout_width="100dp"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/gg"
                     android:text="1"
                     android:textColor="@color/teal_700" />
@@ -110,7 +110,7 @@
                 <Button
                     android:id="@+id/__2"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/gg"
                     android:text="2"
                     android:textColor="@color/teal_700" />
@@ -118,7 +118,7 @@
                 <Button
                     android:id="@+id/__3"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/gg"
                     android:text="3"
                     android:textColor="@color/teal_700" />
@@ -126,7 +126,7 @@
                 <Button
                     android:id="@+id/aa"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="A"
                     android:textColor="@color/teal_900" />
@@ -134,7 +134,7 @@
                 <Button
                     android:id="@+id/bb"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="B"
                     android:textColor="@color/teal_900" />
@@ -147,7 +147,7 @@
                 <Button
                     android:id="@+id/__4"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/gg"
                     android:text="4"
                     android:textColor="@color/teal_700" />
@@ -155,7 +155,7 @@
                 <Button
                     android:id="@+id/__5"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/gg"
                     android:text="5"
                     android:textColor="@color/teal_700" />
@@ -163,7 +163,7 @@
                 <Button
                     android:id="@+id/__6"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/gg"
                     android:text="6"
                     android:textColor="@color/teal_700" />
@@ -171,7 +171,7 @@
                 <Button
                     android:id="@+id/cc"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="C"
                     android:textColor="@color/teal_900" />
@@ -179,7 +179,7 @@
                 <Button
                     android:id="@+id/dd"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="D"
                     android:textColor="@color/teal_900" />
@@ -192,7 +192,7 @@
                 <Button
                     android:id="@+id/__7"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/gg"
                     android:text="7"
                     android:textColor="@color/teal_700" />
@@ -200,7 +200,7 @@
                 <Button
                     android:id="@+id/__8"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/gg"
                     android:text="8"
                     android:textColor="@color/teal_700" />
@@ -208,7 +208,7 @@
                 <Button
                     android:id="@+id/__9"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/gg"
                     android:text="9"
                     android:textColor="@color/teal_700" />
@@ -216,7 +216,7 @@
                 <Button
                     android:id="@+id/__0"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/gg"
                     android:text="0"
                     android:textColor="@color/teal_700" />
@@ -224,7 +224,7 @@
                 <Button
                     android:id="@+id/ee"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="E"
                     android:textColor="@color/teal_900" />
@@ -237,7 +237,7 @@
                 <Button
                     android:id="@+id/ff"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="F"
                     android:textColor="@color/teal_900" />
@@ -245,7 +245,7 @@
                 <Button
                     android:id="@+id/gg"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="G"
                     android:textColor="@color/teal_900" />
@@ -253,7 +253,7 @@
                 <Button
                     android:id="@+id/hh"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="H"
                     android:textColor="@color/teal_900" />
@@ -261,7 +261,7 @@
                 <Button
                     android:id="@+id/ii"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="I"
                     android:textColor="@color/teal_900" />
@@ -269,7 +269,7 @@
                 <Button
                     android:id="@+id/jj"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="J"
                     android:textColor="@color/teal_900" />
@@ -282,7 +282,7 @@
                 <Button
                     android:id="@+id/kk"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="K"
                     android:textColor="@color/teal_900" />
@@ -290,7 +290,7 @@
                 <Button
                     android:id="@+id/ll"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="L"
                     android:textColor="@color/teal_900" />
@@ -298,7 +298,7 @@
                 <Button
                     android:id="@+id/mm"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="M"
                     android:textColor="@color/teal_900" />
@@ -306,7 +306,7 @@
                 <Button
                     android:id="@+id/nn"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="N"
                     android:textColor="@color/teal_900" />
@@ -314,7 +314,7 @@
                 <Button
                     android:id="@+id/oo"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="O"
                     android:textColor="@color/teal_900" />
@@ -327,7 +327,7 @@
                 <Button
                     android:id="@+id/pp"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="P"
                     android:textColor="@color/teal_900" />
@@ -335,7 +335,7 @@
                 <Button
                     android:id="@+id/qq"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="Q"
                     android:textColor="@color/teal_900" />
@@ -343,7 +343,7 @@
                 <Button
                     android:id="@+id/rr"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="R"
                     android:textColor="@color/teal_900" />
@@ -351,7 +351,7 @@
                 <Button
                     android:id="@+id/ss"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="S"
                     android:textColor="@color/teal_900" />
@@ -359,7 +359,7 @@
                 <Button
                     android:id="@+id/tt"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="T"
                     android:textColor="@color/teal_900" />
@@ -373,7 +373,7 @@
                 <Button
                     android:id="@+id/uu"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="U"
                     android:textColor="@color/teal_900" />
@@ -381,7 +381,7 @@
                 <Button
                     android:id="@+id/vv"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="V"
                     android:textColor="@color/teal_900" />
@@ -389,7 +389,7 @@
                 <Button
                     android:id="@+id/ww"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="W"
                     android:textColor="@color/teal_900" />
@@ -397,7 +397,7 @@
                 <Button
                     android:id="@+id/xx"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="X"
                     android:textColor="@color/teal_900" />
@@ -405,7 +405,7 @@
                 <Button
                     android:id="@+id/yy"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/ggg"
                     android:text="Y"
                     android:textColor="@color/teal_900" />
@@ -419,7 +419,6 @@
                 <Button
                     android:id="@+id/zz"
                     android:layout_width="@dimen/widthll"
-                    android:layout_height="@dimen/height"
                     android:backgroundTint="@color/ggg"
                     android:text="Z"
                     android:textColor="@color/teal_900" />
@@ -430,110 +429,110 @@
 
 
     </ScrollView>
-<ScrollView
-    android:id="@+id/operatorScrollView"
-    android:layout_width="wrap_content"
-    android:layout_height="0dp"
-    android:layout_marginLeft="25dp"
-    android:layout_marginTop="5dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/number_value_basecal">
-
-<TableLayout
-        android:id="@+id/horizontalScrollView"
+    <ScrollView
+        android:id="@+id/operatorScrollView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-       >
-        <TableRow
-            android:id="@+id/tableRow"
+        android:layout_height="0dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/number_value_basecal">
+
+        <TableLayout
+            android:id="@+id/tableLayout"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            >
+            <TableRow
+                android:id="@+id/tableRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/plusbasecal"
-                android:layout_width="@dimen/widthl"
-                android:layout_height="@dimen/heightl"
-                android:backgroundTint="@color/gggg"
-                android:text="+"
-                android:textColor="@color/teal_900" />
+                <Button
+                    android:id="@+id/plusbasecal"
+                    android:layout_width="@dimen/widthl"
+                    android:layout_height="@dimen/heightl"
+                    android:backgroundTint="@color/gggg"
+                    android:text="+"
+                    android:textColor="@color/teal_900" />
 
-            <Button
-                android:id="@+id/minusbasecal"
-                android:layout_width="@dimen/widthl"
-                android:layout_height="@dimen/heightl"
-                android:backgroundTint="@color/gggg"
-                android:text="-"
-                android:textColor="@color/teal_900" />
-        </TableRow>
+                <Button
+                    android:id="@+id/minusbasecal"
+                    android:layout_width="@dimen/widthl"
+                    android:layout_height="@dimen/heightl"
+                    android:backgroundTint="@color/gggg"
+                    android:text="-"
+                    android:textColor="@color/teal_900" />
+            </TableRow>
 
-        <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/multiplybasecal"
-                android:layout_width="@dimen/widthl"
-                android:layout_height="@dimen/heightl"
-                android:backgroundTint="@color/gggg"
-                android:text="x"
-                android:textColor="@color/teal_900" />
+                <Button
+                    android:id="@+id/multiplybasecal"
+                    android:layout_width="@dimen/widthl"
+                    android:layout_height="@dimen/heightl"
+                    android:backgroundTint="@color/gggg"
+                    android:text="x"
+                    android:textColor="@color/teal_900" />
 
-            <Button
-                android:id="@+id/dividebasecal"
-                android:layout_width="@dimen/widthl"
-                android:layout_height="@dimen/heightl"
-                android:backgroundTint="@color/gggg"
-                android:text="/"
-                android:textColor="@color/teal_900" />
-        </TableRow>
+                <Button
+                    android:id="@+id/dividebasecal"
+                    android:layout_width="@dimen/widthl"
+                    android:layout_height="@dimen/heightl"
+                    android:backgroundTint="@color/gggg"
+                    android:text="/"
+                    android:textColor="@color/teal_900" />
+            </TableRow>
 
-        <TableRow
-            android:id="@+id/tableRow3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/bracket"
-                android:layout_width="@dimen/widthl"
-                android:layout_height="@dimen/heightl"
-                android:backgroundTint="@color/gggg"
-                android:text="()"
-                android:textColor="@color/teal_900" />
+                <Button
+                    android:id="@+id/bracket"
+                    android:layout_width="@dimen/widthl"
+                    android:layout_height="@dimen/heightl"
+                    android:backgroundTint="@color/gggg"
+                    android:text="()"
+                    android:textColor="@color/teal_900" />
 
-            <Button
-                android:id="@+id/dott"
-                android:layout_width="@dimen/widthl"
-                android:layout_height="@dimen/heightl"
-                android:backgroundTint="@color/gggg"
-                android:text="."
-                android:textColor="@color/teal_900" />
-        </TableRow>
+                <Button
+                    android:id="@+id/dott"
+                    android:layout_width="@dimen/widthl"
+                    android:layout_height="@dimen/heightl"
+                    android:backgroundTint="@color/gggg"
+                    android:text="."
+                    android:textColor="@color/teal_900" />
+            </TableRow>
 
-        <TableRow
-            android:id="@+id/tableRow4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            <TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/delbasecal"
-                android:layout_width="@dimen/widthl"
-                android:layout_height="@dimen/heightl"
-                android:backgroundTint="@color/gggg"
-                android:text="DEl"
-                android:textColor="@color/Red" />
+                <Button
+                    android:id="@+id/delbasecal"
+                    android:layout_width="@dimen/widthl"
+                    android:layout_height="@dimen/heightl"
+                    android:backgroundTint="@color/gggg"
+                    android:text="DEl"
+                    android:textColor="@color/Red" />
 
-            <Button
-                android:id="@+id/clearbasecal"
-                android:layout_width="@dimen/widthl"
-                android:layout_height="@dimen/heightl"
-                android:backgroundTint="@color/Red"
-                android:text="CLEAR"
-                android:textColor="@color/white" />
+                <Button
+                    android:id="@+id/clearbasecal"
+                    android:layout_width="@dimen/widthl"
+                    android:layout_height="@dimen/heightl"
+                    android:backgroundTint="@color/Red"
+                    android:text="CLEAR"
+                    android:textColor="@color/white" />
 
-        </TableRow>
-    </TableLayout></ScrollView>
+            </TableRow>
+        </TableLayout></ScrollView>
 
 
     <Button

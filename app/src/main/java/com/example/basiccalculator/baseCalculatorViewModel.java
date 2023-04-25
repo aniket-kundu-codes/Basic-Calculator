@@ -3,6 +3,7 @@ package com.example.basiccalculator;
 import androidx.lifecycle.ViewModel;
 
 public class baseCalculatorViewModel extends ViewModel {
+    String text="";
     public String getText() {
         return text;
     }
@@ -11,7 +12,7 @@ public class baseCalculatorViewModel extends ViewModel {
         this.text = text;
     }
 
-    String text="";
+
 
     public int getIbase() {
         return ibase;

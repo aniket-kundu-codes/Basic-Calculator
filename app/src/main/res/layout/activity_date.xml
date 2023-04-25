@@ -122,7 +122,6 @@
         android:id="@+id/FirstDate"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="125dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="1dp"
         android:digits="0123456789/"
@@ -133,7 +132,7 @@
         android:inputType="date"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/fdate_radiogroup"
-        app:layout_constraintEnd_toStartOf="@+id/fdate_radiogroup"
+        app:layout_constraintEnd_toEndOf="@+id/relativeLayout"
         app:layout_constraintStart_toStartOf="parent" />
 
     <RelativeLayout

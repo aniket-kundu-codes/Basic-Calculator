@@ -69,12 +69,15 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="numberDecimal" />
-
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                                        android:layout_weight="1" />
                 <Button
                     android:id="@+id/showl"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="55dp"
+                    android:layout_gravity="right"
                     android:backgroundTint="@color/Green"/>
 
             </TableRow>
@@ -603,12 +606,14 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="numberDecimal" />
-
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
                 <Button
                     android:id="@+id/showa"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="55dp"
                     android:backgroundTint="@color/Green"/>
 
             </TableRow>
@@ -979,12 +984,14 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="numberDecimal" />
-
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
                 <Button
                     android:id="@+id/showv"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="55dp"
                     android:backgroundTint="@color/Green"/>
 
             </TableRow>
@@ -1382,12 +1389,14 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="numberDecimal" />
-
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
                 <Button
                     android:id="@+id/showp"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="55dp"
                     android:backgroundTint="@color/Green"/>
 
             </TableRow>
@@ -1670,12 +1679,14 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="numberDecimal" />
-
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
                 <Button
                     android:id="@+id/showd"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="55dp"
                     android:backgroundTint="@color/Green"/>
 
             </TableRow>
@@ -1860,12 +1871,14 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="numberDecimal" />
-
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
                 <Button
                     android:id="@+id/shows"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="55dp"
                     android:backgroundTint="@color/Green"/>
 
             </TableRow>
@@ -2060,12 +2073,14 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="numberSigned|numberDecimal" />
-
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
                 <Button
                     android:id="@+id/showtemp"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="55dp"
                     android:backgroundTint="@color/Green"/>
 
             </TableRow>
@@ -2200,12 +2215,14 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="numberDecimal" />
-
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
                 <Button
                     android:id="@+id/showw"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="55dp"
                     android:backgroundTint="@color/Green"/>
 
             </TableRow>
@@ -2458,12 +2475,14 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="numberDecimal" />
-
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
                 <Button
                     android:id="@+id/showtime"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="55dp"
                     android:backgroundTint="@color/Green"/>
 
             </TableRow>
@@ -2631,12 +2650,14 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                      />
-
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
                 <Button
                     android:id="@+id/showb"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="55dp"
                     android:backgroundTint="@color/Green"/>
 
             </TableRow>

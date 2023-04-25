@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher2"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher2_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BasicCalculator">
         <provider
@@ -26,7 +26,9 @@
             android:windowSoftInputMode="adjustPan"></activity>
         <activity
             android:name=".BaseCalculator"
-            android:windowSoftInputMode="stateAlwaysHidden" />
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:configChanges="orientation"
+            />
         <activity
             android:name=".Investment"
             android:windowSoftInputMode="adjustPan" />
